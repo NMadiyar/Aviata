@@ -2,9 +2,15 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AirlinesOptions: typeof import('./src/components/FilterOptions/AirlinesOptions.vue')['default']
+    FilterOptions: typeof import('./src/components/FilterOptions/FilterOptions.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    MainContent: typeof import('./src/components/MainContent/MainContent.vue')['default']
+    RateOptions: typeof import('./src/components/FilterOptions/RateOptions.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }
 

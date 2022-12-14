@@ -31,6 +31,9 @@
               id="checkStraight"
               ref="checkStraight"
               type="checkbox"
+              v-model="filterData"
+              :value="onlyStraight"
+              @change="getFilterData"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <label
@@ -48,6 +51,9 @@
               id="checkLuggage"
               ref="checkLuggage"
               type="checkbox"
+              v-model="filterData"
+              @change="getFilterData"
+              :value="luggage"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <label
@@ -65,6 +71,9 @@
               id="checkReturnal"
               ref="checkReturnal"
               type="checkbox"
+              v-model="filterData"
+              :value="refundal"
+              @change="getFilterData"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <label
@@ -82,6 +91,14 @@
 <script>
 export default {
   name: "RateOptions",
+  data() {
+    return {
+      filterData: [],
+      onlyStraight: "straight",
+      luggage: "luggage",
+      refundal: "refundal",
+    };
+  },
   methods: {
     onHover() {
       this.$refs.filterIcon.setAttribute(
@@ -97,6 +114,9 @@ export default {
     },
     leaveInput(ref) {
       ref.classList.remove("bg-[url('/img/checbox_hover.svg')]");
+    },
+    getFilterData() {
+      this.$emit("getFilterData", this.filterData);
     },
   },
 };

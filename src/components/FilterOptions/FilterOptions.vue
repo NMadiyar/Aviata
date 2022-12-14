@@ -3,7 +3,7 @@
     <RateOptions></RateOptions>
     <AirlineOptions></AirlineOptions>
     <button
-      class="!font-openSans text-[12px] ml-[12px] text-[#7284E4] underline decoration-dotted leading-[16px] font-normal hover:scale-110 ease-in duration-200"
+      class="font-openSans text-[12px] ml-[12px] text-[#7284E4] underline decoration-dotted leading-[16px] font-normal hover:scale-105 ease-in duration-200"
     >
       Сбросить все фильтры
     </button>

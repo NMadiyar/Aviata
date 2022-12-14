@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="w-100 h-[320px] bg-[#f5f5f5] rounded-[4px] m-[12px]">
-      <div class="p-[12px]">
-        <div class="flex justify-between align-middle font-openSans mb-[12px]">
+      <div>
+        <div class="flex justify-between align-middle font-openSans p-[12px]">
           <h2 class="font-bold leading-[20px] text-[17px] text-[#202123]">
             Авиакомпании
           </h2>
@@ -13,7 +13,7 @@
           >
             <img
               ref="filterIcon"
-              src="public/img/icon-close-filter.svg"
+              src="/img/icon-close-filter.svg"
               alt="reset"
               width="20"
               height="20"
@@ -21,40 +21,104 @@
           </button>
         </div>
 
-        <div class="align-middle text-center text-[14px]">
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+        <form class="align-middle text-center text-[14px]">
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.All)"
+            @mouseleave="leaveInput(this.$refs.All)"
+          >
+            <input
+              ref="All"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Все</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Astana)"
+            @mouseleave="leaveInput(this.$refs.Astana)"
+          >
+            <input
+              ref="Astana"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Air Astana</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Bek)"
+            @mouseleave="leaveInput(this.$refs.Bek)"
+          >
+            <input
+              ref="Bek"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Bek Air</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Arystan)"
+            @mouseleave="leaveInput(this.$refs.Arystan)"
+          >
+            <input
+              ref="Arystan"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Fly Arystan</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Scat)"
+            @mouseleave="leaveInput(this.$refs.Scat)"
+          >
+            <input
+              ref="Scat"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Scat Airlines</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Lufthansa)"
+            @mouseleave="leaveInput(this.$refs.Lufthansa)"
+          >
+            <input
+              ref="Lufthansa"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Lufthansa</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.Turkish)"
+            @mouseleave="leaveInput(this.$refs.Turkish)"
+          >
+            <input
+              ref="Turkish"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">Turkish Airlines</p>
           </div>
-          <div class="flex text-center items-center h-[32px]">
-            <input type="checkbox" class="mr-[12px]" />
+          <div
+            class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.China)"
+            @mouseleave="leaveInput(this.$refs.China)"
+          >
+            <input
+              ref="China"
+              type="checkbox"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+            />
             <p class="text-[#202123]">China Southern Air</p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -75,6 +139,12 @@ export default {
         "src",
         "public/img/icon-close-filter.svg"
       );
+    },
+    hoverInput(ref) {
+      ref.classList.add("bg-[url('/img/checbox_hover.svg')]");
+    },
+    leaveInput(ref) {
+      ref.classList.remove("bg-[url('/img/checbox_hover.svg')]");
     },
   },
 };

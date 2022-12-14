@@ -13,7 +13,7 @@
           >
             <img
               ref="filterIcon"
-              src="public/img/icon-close-filter.svg"
+              src="/img/icon-close-filter.svg"
               alt="reset"
               width="20"
               height="20"
@@ -21,35 +21,44 @@
           </button>
         </div>
 
-        <div class="align-middle text-center text-[14px]">
+        <form class="align-middle text-center text-[14px]">
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.checkStraight)"
+            @mouseleave="leaveInput(this.$refs.checkStraight)"
           >
             <input
+              ref="checkStraight"
               type="checkbox"
-              class="mr-[12px] cursor-pointer bg-[url('public/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('public/img/checbox_active.svg')] hover:bg-[url('public/img/checbox_hover.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('public/img/checbox_active.svg')]"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <p class="text-[#202123]">Только прямые</p>
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.checkLuggage)"
+            @mouseleave="leaveInput(this.$refs.checkLuggage)"
           >
             <input
+              ref="checkLuggage"
               type="checkbox"
-              class="mr-[12px] cursor-pointer bg-[url('public/img/checboxNormal.svg')] bg-cover appearance-none border-0 hover:bg-[url('public/img/checbox_hover.svg')] ease-linear duration-200 checked:bg-[url('public/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('public/img/checbox_active.svg')]"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <p class="text-[#202123]">Только с багажом</p>
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
+            @mouseover="hoverInput(this.$refs.checkReturnal)"
+            @mouseleave="leaveInput(this.$refs.checkReturnal)"
           >
             <input
+              ref="checkReturnal"
               type="checkbox"
-              class="mr-[12px] cursor-pointer bg-[url('public/img/checboxNormal.svg')] bg-cover appearance-none border-0 hover:bg-[url('public/img/checbox_hover.svg')] ease-linear duration-200 checked:bg-[url('public/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('public/img/checbox_active.svg')]"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <p class="text-[#202123]">Только возвратные</p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -70,6 +79,12 @@ export default {
         "src",
         "public/img/icon-close-filter.svg"
       );
+    },
+    hoverInput(ref) {
+      ref.classList.add("bg-[url('/img/checbox_hover.svg')]");
+    },
+    leaveInput(ref) {
+      ref.classList.remove("bg-[url('/img/checbox_hover.svg')]");
     },
   },
 };

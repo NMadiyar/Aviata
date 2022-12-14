@@ -17,9 +17,11 @@
               alt="logo"
             />
             <p
+              v-for="(airlineName, index) in flight.itineraries"
+              :key="airlineName"
               class="font-openSans text-[14px] font-semibold leading-[19px] text-[#202123]"
             >
-              Air Astana
+              {{ airlineName[index].carrier_name }}
             </p>
           </div>
           <div class="mt-[59px]">
@@ -139,9 +141,6 @@ export default {
     ...mapState(useResultStore, {
       resultsArray: (store) => store.resultsArray,
     }),
-    getInfo() {
-      return this.resultsArray.airlines;
-    },
   },
 };
 </script>

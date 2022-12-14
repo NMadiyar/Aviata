@@ -86,14 +86,11 @@ export default {
     onHover() {
       this.$refs.filterIcon.setAttribute(
         "src",
-        "public/img/icon-close-filter-hover.svg"
+        "/img/icon-close-filter-hover.svg"
       );
     },
     afterHover() {
-      this.$refs.filterIcon.setAttribute(
-        "src",
-        "public/img/icon-close-filter.svg"
-      );
+      this.$refs.filterIcon.setAttribute("src", "/img/icon-close-filter.svg");
     },
     hoverInput(ref) {
       ref.classList.add("bg-[url('/img/checbox_hover.svg')]");

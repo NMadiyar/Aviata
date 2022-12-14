@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap justify-center align-middle m-auto">
-    <div class="flex-initial w-[240px] mr-10">
+    <div class="flex-initial w-[240px]">
       <FilterOptions></FilterOptions>
     </div>
     <div class="flex-initial w-[880px]">

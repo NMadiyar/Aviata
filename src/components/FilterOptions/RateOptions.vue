@@ -28,11 +28,14 @@
             @mouseleave="leaveInput(this.$refs.checkStraight)"
           >
             <input
+              id="checkStraight"
               ref="checkStraight"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <p class="text-[#202123]">Только прямые</p>
+            <label for="checkStraight" class="text-[#202123] cursor-pointer"
+              >Только прямые</label
+            >
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
@@ -40,11 +43,14 @@
             @mouseleave="leaveInput(this.$refs.checkLuggage)"
           >
             <input
+              id="checkLuggage"
               ref="checkLuggage"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <p class="text-[#202123]">Только с багажом</p>
+            <label for="checkLuggage" class="text-[#202123] cursor-pointer"
+              >Только с багажом</label
+            >
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
@@ -52,11 +58,14 @@
             @mouseleave="leaveInput(this.$refs.checkReturnal)"
           >
             <input
+              id="checkReturnal"
               ref="checkReturnal"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <p class="text-[#202123]">Только возвратные</p>
+            <label for="checkReturnal" class="text-[#202123] cursor-pointer"
+              >Только возвратные</label
+            >
           </div>
         </form>
       </div>

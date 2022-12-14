@@ -31,9 +31,13 @@
               id="All"
               ref="All"
               type="checkbox"
-              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <p class="text-[#202123]">Все</p>
+            <label
+              for="All"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
+              >Все</label
+            >
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
@@ -41,11 +45,14 @@
             @mouseleave="leaveInput(this.$refs.Astana)"
           >
             <input
+              id="Astana"
               ref="Astana"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="All" class="text-[#202123] cursor-pointer"
+            <label
+              for="Astana"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Air Astana</label
             >
           </div>
@@ -60,7 +67,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="Bek" class="text-[#202123] cursor-pointer"
+            <label
+              for="Bek"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Bek Air</label
             >
           </div>
@@ -75,7 +84,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="Arystan" class="text-[#202123] cursor-pointer"
+            <label
+              for="Arystan"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Fly Arystan</label
             >
           </div>
@@ -90,7 +101,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="Scat" class="text-[#202123] cursor-pointer"
+            <label
+              for="Scat"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Scat Airlines</label
             >
           </div>
@@ -105,7 +118,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="Lufthansa" class="text-[#202123] cursor-pointer"
+            <label
+              for="Lufthansa"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Lufthansa</label
             >
           </div>
@@ -120,7 +135,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="Turkish" class="text-[#202123] cursor-pointer"
+            <label
+              for="Turkish"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Turkish Airlines</label
             >
           </div>
@@ -135,7 +152,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="China" class="text-[#202123] cursor-pointer"
+            <label
+              for="China"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >China Southern Air</label
             >
           </div>

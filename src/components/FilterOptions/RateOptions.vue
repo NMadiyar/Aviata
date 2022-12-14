@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-100 h-[152px] bg-[#f5f5f5] rounded-[4px] m-[12px]">
+    <div class="w-100 h-[152px] bg-[#f5f5f5] rounded-[4px] ml-[12px] mr-[12px]">
       <div>
         <div class="flex justify-between align-middle font-openSans p-[12px]">
           <h2 class="font-bold leading-[20px] text-[17px] text-[#202123]">
@@ -33,7 +33,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="checkStraight" class="text-[#202123] cursor-pointer"
+            <label
+              for="checkStraight"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Только прямые</label
             >
           </div>
@@ -48,7 +50,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="checkLuggage" class="text-[#202123] cursor-pointer"
+            <label
+              for="checkLuggage"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Только с багажом</label
             >
           </div>
@@ -63,7 +67,9 @@
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
-            <label for="checkReturnal" class="text-[#202123] cursor-pointer"
+            <label
+              for="checkReturnal"
+              class="text-[#202123] cursor-pointer w-[100%] text-left"
               >Только возвратные</label
             >
           </div>

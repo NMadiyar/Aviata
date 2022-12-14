@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-wrap justify-center align-middle m-auto">
+  <div
+    class="flex flex-wrap justify-center align-middle m-auto pt-[50px] font-openSans"
+  >
     <div class="flex-initial w-[240px]">
       <FilterOptions></FilterOptions>
     </div>

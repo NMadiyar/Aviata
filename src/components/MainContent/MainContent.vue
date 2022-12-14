@@ -7,7 +7,11 @@
       v-for="flight in resultsArray.flights"
       :key="flight"
     >
-      <div class="flex items-center">
+      <div
+        class="flex items-center"
+        v-for="(itinerar, index) in flight.itineraries"
+        :key="itinerar"
+      >
         <div class="mt-[53px]">
           <div class="flex">
             <img
@@ -17,11 +21,9 @@
               alt="logo"
             />
             <p
-              v-for="(airlineName, index) in flight.itineraries"
-              :key="airlineName"
               class="font-openSans text-[14px] font-semibold leading-[19px] text-[#202123]"
             >
-              {{ airlineName[index].carrier_name }}
+              {{ itinerar[index].carrier_name }}
             </p>
           </div>
           <div class="mt-[59px]">

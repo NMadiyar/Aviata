@@ -10,6 +10,7 @@
             title="Сбросить выбор"
             @mouseover="onHover"
             @mouseleave="afterHover"
+            @click="airlineData = []"
           >
             <img
               ref="filterIcon"
@@ -31,8 +32,10 @@
               id="All"
               ref="All"
               v-model="airlineData"
+              value="All"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="All"
@@ -52,6 +55,7 @@
               value="KC"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="Astana"
@@ -71,6 +75,7 @@
               value="HY"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="uzbek"
@@ -90,6 +95,7 @@
               value="EK"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="Emirates"
@@ -109,6 +115,7 @@
               value="DV"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="Scat"
@@ -128,6 +135,7 @@
               value="LH"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="Lufthansa"
@@ -147,6 +155,7 @@
               value="TK"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="Turkish"
@@ -166,6 +175,7 @@
               value="CZ"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
+              @change="getAirlineData"
             />
             <label
               for="China"
@@ -202,6 +212,9 @@ export default {
     },
     leaveInput(ref) {
       ref.classList.remove("bg-[url('/img/checbox_hover.svg')]");
+    },
+    getAirlineData() {
+      this.$emit("getAirlineData", this.airlineData);
     },
   },
 };

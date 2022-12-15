@@ -3,10 +3,16 @@
     class="flex flex-wrap sm:justify-center align-middle m-auto pt-[50px] font-openSans"
   >
     <div class="w-[100%] sm:w-auto">
-      <FilterOptions @getRateFilter="getRateFilter"></FilterOptions>
+      <FilterOptions
+        @getRateFilter="getRateFilter"
+        @getAirlineData="getAirlineData"
+      ></FilterOptions>
     </div>
     <div class="w-[100%] sm:w-auto">
-      <MainContent :rate-filter="rateFilter"></MainContent>
+      <MainContent
+        :rate-filter="rateFilter"
+        :airline-filter="airlineFilter"
+      ></MainContent>
     </div>
   </div>
 </template>
@@ -18,11 +24,15 @@ export default {
   data() {
     return {
       rateFilter: [],
+      airlineFilter: [],
     };
   },
   methods: {
     getRateFilter(value) {
-      this.rateFilter = [...value];
+      this.rateFilter = value;
+    },
+    getAirlineData(value) {
+      this.airlineFilter = value;
     },
   },
 };

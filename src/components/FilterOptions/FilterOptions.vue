@@ -1,7 +1,7 @@
 <template>
   <div>
     <RateOptions @getFilterData="getFilterData"></RateOptions>
-    <AirlineOptions></AirlineOptions>
+    <AirlineOptions @getAirlineData="getAirlineData"></AirlineOptions>
     <button
       class="font-openSans text-[12px] ml-[12px] text-[#7284E4] underline decoration-dotted leading-[16px] font-normal hover:scale-105 ease-in duration-200"
     >
@@ -13,13 +13,16 @@
 <script>
 import RateOptions from "../FilterOptions/RateOptions.vue";
 import AirlineOptions from "../FilterOptions/AirlinesOptions.vue";
-export default {
+export default defineComponent({
   name: "FilterOptions",
   components: { AirlineOptions, RateOptions },
   methods: {
     getFilterData(value) {
       this.$emit("getRateFilter", value);
     },
+    getAirlineData(value) {
+      this.$emit("getAirlineData", value);
+    },
   },
-};
+});
 </script>

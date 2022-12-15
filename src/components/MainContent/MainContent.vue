@@ -1,7 +1,7 @@
 <template>
   <div v-for="flight in getRateFilterValue" :key="flight">
     <div v-for="(itinerar, index) in flight.itineraries" :key="itinerar">
-      <!--      ZDES-->
+      <!--   Mobile version   -->
       <div class="m-2 bg-white h-[408px] min-w-[240px] rounded-[4px] sm:hidden">
         <div
           class="flex justify-between p-[12px] mb-[25px] align-middle items-center"
@@ -103,8 +103,10 @@
         </div>
       </div>
 
+      <!--   End of Mobile   -->
+
       <div
-        class="bg-white shadow-[0px 2px 4px rgba(0, 0, 0, 0.15)] h-[168px] font-openSans rounded-[4px] mb-[12px] sm:block hidden"
+        class="bg-white md:w-[800px] shadow-[0px 2px 4px rgba(0, 0, 0, 0.15)] h-[168px] font-openSans rounded-[4px] mb-[12px] sm:block hidden"
       >
         <div
           class="flex h-[100%] justify-between pl-10 align-middle text-center relative bg-white rounded-[4px]"
@@ -206,7 +208,7 @@
             </div>
           </div>
 
-          <div class="flex mr-20">
+          <div class="flex mr-10">
             <div class="mt-[46px]">
               <p
                 class="font-openSans text-[12px] leading-[16px] text-[#202123]"
@@ -276,6 +278,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    airlineFilter: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -289,24 +295,81 @@ export default {
     getRateFilterValue() {
       let res = "";
       this.rateFilter.forEach((el) => (res = el));
-      let resC = this.resultsArray.flights.filter((el) => {
-        return el.refundable === true;
-      });
-      return resC;
+      let refund;
+      if (res === "refundable") {
+        refund = this.resultsArray.flights.filter((el) => {
+          return el.refundable === true;
+        });
+        return refund;
+      } else if (res === "" || res === null || res === undefined) {
+        return this.resultsArray.flights;
+      } else if (res === "luggage") {
+        let result;
+        result = this.resultsArray.flights.filter((el) => {
+          let services = Object.keys(el.services);
+          return services.toString() !== "0PC";
+        });
+        return result;
+      } else if (res === "straight") {
+        let result;
+        result = this.resultsArray.flights.filter((el) => {
+          let itin;
+          itin = el.itineraries.filter((i) => {
+            return i[0].stops === 0;
+          });
+          return itin.length > 0;
+        });
+        return result;
+      }
     },
-    getLuggageFilter() {
-      // let res = this.resultsArray.flights.map((el) => {
-      //   return el.services;
-      // });
-      // let another = Object.values(res);
-      // another.forEach((el) => {
-      //   Object.values(
-      //     el.forEach((i) => {
-      //       console.log(i);
-      //     })
-      //   );
-      // });
-      // return res;
+    getAirlineValue() {
+      let res = "";
+      this.airlineFilter.forEach((el) => (res = el));
+      if (res === "KC") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "KC";
+        });
+        return airlineRes;
+      } else if (res === "HY") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "HY";
+        });
+        return airlineRes;
+      } else if (res === "EK") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "EK";
+        });
+        return airlineRes;
+      } else if (res === "DV") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "DV";
+        });
+        return airlineRes;
+      } else if (res === "LH") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "LH";
+        });
+        return airlineRes;
+      } else if (res === "CZ") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "CZ";
+        });
+        return airlineRes;
+      } else if (res === "TK") {
+        let airlineRes;
+        airlineRes = this.resultsArray.flights.filter((el) => {
+          return el.validating_carrier === "TK";
+        });
+        return airlineRes;
+      } else {
+        return this.resultsArray.flights;
+      }
     },
   },
   methods: {

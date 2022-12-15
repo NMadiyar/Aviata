@@ -12,6 +12,7 @@
             title="Сбросить выбор"
             @mouseover="onHover"
             @mouseleave="afterHover"
+            @click="filterData = []"
           >
             <img
               ref="filterIcon"
@@ -74,7 +75,7 @@
               ref="checkReturnal"
               type="checkbox"
               v-model="filterData"
-              :value="refundal"
+              :value="refundable"
               @change="getFilterData"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 ease-linear duration-200 checked:bg-[url('/img/checbox_active.svg')] focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -98,7 +99,7 @@ export default {
       filterData: [],
       onlyStraight: "straight",
       luggage: "luggage",
-      refundal: "refundal",
+      refundable: "refundable",
     };
   },
   methods: {

@@ -1,9 +1,11 @@
 <template>
-  <div class="flex justify-center align-middle m-auto pt-[50px] font-openSans">
-    <div class="flex-initial w-[240px]">
+  <div
+    class="flex flex-wrap sm:justify-center align-middle m-auto pt-[50px] font-openSans md:w-100"
+  >
+    <div class="w-[100%] sm:w-auto">
       <FilterOptions @getRateFilter="getRateFilter"></FilterOptions>
     </div>
-    <div class="flex-initial w-[880px]">
+    <div class="w-[100%] sm:w-auto">
       <MainContent :rate-filter="rateFilter"></MainContent>
     </div>
   </div>

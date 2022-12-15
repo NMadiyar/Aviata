@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-100 h-[320px] bg-[#f5f5f5] rounded-[4px] m-[12px]">
+    <div class="min-w-[240px] h-[320px] bg-[#f5f5f5] rounded-[4px] m-[12px]">
       <div>
         <div class="flex justify-between align-middle font-openSans p-[12px]">
           <h2 class="font-bold leading-[20px] text-[17px] text-[#202123]">

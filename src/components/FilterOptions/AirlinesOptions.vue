@@ -30,6 +30,7 @@
             <input
               id="All"
               ref="All"
+              v-model="airlineData"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -47,6 +48,8 @@
             <input
               id="Astana"
               ref="Astana"
+              v-model="airlineData"
+              value="KC"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -58,36 +61,40 @@
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
-            @mouseover="hoverInput(this.$refs.Bek)"
-            @mouseleave="leaveInput(this.$refs.Bek)"
+            @mouseover="hoverInput(this.$refs.uzbek)"
+            @mouseleave="leaveInput(this.$refs.uzbek)"
           >
             <input
-              id="Bek"
-              ref="Bek"
+              id="uzbek"
+              ref="uzbek"
+              v-model="airlineData"
+              value="HY"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <label
-              for="Bek"
+              for="uzbek"
               class="text-[#202123] cursor-pointer w-[100%] text-left"
-              >Bek Air</label
+              >Uzbekistan Airways</label
             >
           </div>
           <div
             class="flex text-center items-center h-[32px] cursor-pointer hover:bg-[#EBEBEB] pl-[12px]"
-            @mouseover="hoverInput(this.$refs.Arystan)"
-            @mouseleave="leaveInput(this.$refs.Arystan)"
+            @mouseover="hoverInput(this.$refs.Emirates)"
+            @mouseleave="leaveInput(this.$refs.Emirates)"
           >
             <input
-              id="Arystan"
-              ref="Arystan"
+              id="Emirates"
+              ref="Emirates"
+              v-model="airlineData"
+              value="EK"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
             <label
-              for="Arystan"
+              for="Emirates"
               class="text-[#202123] cursor-pointer w-[100%] text-left"
-              >Fly Arystan</label
+              >Emirates</label
             >
           </div>
           <div
@@ -98,6 +105,8 @@
             <input
               id="Scat"
               ref="Scat"
+              v-model="airlineData"
+              value="DV"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -115,6 +124,8 @@
             <input
               id="Lufthansa"
               ref="Lufthansa"
+              v-model="airlineData"
+              value="LH"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -132,6 +143,8 @@
             <input
               id="Turkish"
               ref="Turkish"
+              v-model="airlineData"
+              value="TK"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -149,6 +162,8 @@
             <input
               id="China"
               ref="China"
+              v-model="airlineData"
+              value="CZ"
               type="checkbox"
               class="mr-[12px] cursor-pointer bg-[url('/img/checboxNormal.svg')] bg-cover appearance-none border-0 checked:bg-[url('/img/checbox_active.svg')] ease-linear duration-200 focus:ring-0 focus:ring-offset-0 active:bg-[url('/img/checbox_active.svg')]"
             />
@@ -167,6 +182,11 @@
 <script>
 export default {
   name: "AirlineOptions",
+  data() {
+    return {
+      airlineData: [],
+    };
+  },
   methods: {
     onHover() {
       this.$refs.filterIcon.setAttribute(

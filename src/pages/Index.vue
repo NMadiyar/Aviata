@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-wrap sm:justify-center align-middle m-auto pt-[50px] font-openSans md:w-100"
+    class="flex flex-wrap sm:justify-center align-middle m-auto pt-[50px] font-openSans"
   >
     <div class="w-[100%] sm:w-auto">
       <FilterOptions @getRateFilter="getRateFilter"></FilterOptions>
